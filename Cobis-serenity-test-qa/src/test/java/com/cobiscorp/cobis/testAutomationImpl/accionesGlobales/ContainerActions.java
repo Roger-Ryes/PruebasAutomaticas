@@ -2,19 +2,15 @@ package com.cobiscorp.cobis.testAutomationImpl.accionesGlobales;
 
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Switch;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import org.assertj.core.error.ShouldAccept;
 import org.openqa.selenium.Keys;
 
 import com.cobiscorp.cobis.pfprt.test.Container;
@@ -47,13 +43,6 @@ public class ContainerActions {
 		theActorInTheSpotlight().attemptsTo(ContainerActionsTasks.WaitUntilComponent.charge());
 		theActorInTheSpotlight().attemptsTo(ContainerActionsTasks.EnterTheText.text(texto, target));
 	}
-	
-	public static void EnterDate(Target target, String texto) {
-		theActorInTheSpotlight().attemptsTo(ContainerActionsTasks.WaitUntilComponent.charge());
-		theActorInTheSpotlight().attemptsTo(ContainerActionsTasks.EnterDate.text(texto, target));
-	}
-	
-	
 	
 	/**
 	 * Metodo para
@@ -120,10 +109,6 @@ public class ContainerActions {
 		theActorInTheSpotlight().attemptsTo(Switch.toFrame(1));
 	}
 
-	public static void validateMessage(Target element) {
-		theActorInTheSpotlight().attemptsTo(ContainerActionsTasks.WaitUntilComponent.charge());
-		theActorInTheSpotlight().should(GivenWhenThen.seeThat(WebElementQuestion.the(element),WebElementStateMatchers.isVisible()));
-	}
 
 //	@Override
 //	@Step("{0} Digita el texto #text")

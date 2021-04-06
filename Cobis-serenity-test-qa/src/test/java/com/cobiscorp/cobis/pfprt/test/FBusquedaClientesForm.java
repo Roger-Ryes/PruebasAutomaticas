@@ -389,11 +389,6 @@ public class FBusquedaClientesForm {
 		public static Target BOTON_BUSCAR = Target.the("Botón Buscar Cliente").inIFrame(PROFILE_BANK_ACCOUNT_BALANCES).located(By.xpath("//button[@class='btn btn-primary btn-lg']"));
 
 	}
-	
-	public static class FiltroComprobanteContable {
-		public static Target INPUT_FECHA = Target.the("Campo de Fecha").inIFrame(PROFILE_BANK_ACCOUNT_BALANCES).located(By.id("VA_1972NOYIHZCXWGH_841628"));
-	}
-	
 
 	public static class GridListaPJuridica {
 //

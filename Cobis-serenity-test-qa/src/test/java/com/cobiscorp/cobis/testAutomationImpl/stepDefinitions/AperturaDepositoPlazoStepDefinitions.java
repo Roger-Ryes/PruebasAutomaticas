@@ -33,9 +33,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
 	}
 
-	@Cuando("realiza la busqueda de un cliente")
-	public void realiza_la_busqueda_de_un_cliente() {
-		FormActions.EnterText(FBusquedaClientesForm.FiltroBusquedaCliente.INPUT_IDENTIFICACION, "123456789");
+	@Cuando("realiza la busqueda de un {string}")
+	public void realiza_la_busqueda_de_un_cliente(String string) {
+		
+		FormActions.EnterText(FBusquedaClientesForm.FiltroBusquedaCliente.INPUT_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClientesForm.FiltroBusquedaCliente.BOTON_BUSCAR);
 		FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.PRIMER_CLIENTE);
 		FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.BOTON_ACCEPT_ROW);

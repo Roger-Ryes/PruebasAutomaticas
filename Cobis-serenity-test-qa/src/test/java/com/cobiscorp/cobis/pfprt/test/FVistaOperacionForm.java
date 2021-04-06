@@ -54,6 +54,7 @@ public static Target BOTON_SIGUIENTE_OPERACION = Target.the("Botón Siguiente").
 		public static Target SELECT_PRODUCTO_CLIC = Target.the("Select Producto").inIFrame(IFRAME_MENU).located(By.xpath("//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/span[1]/span[2]"));
 		public static Target SELECT_PRODUCTO = Target.the("Select Producto").inIFrame(IFRAME_MENU).located(By.xpath("//li[contains(text(),'CERTIFICADO VIP')]"));
 		
+		
 		public static Target SELECT_FROMA_PAGO_CLIC = Target.the("Select Forma de Pago").inIFrame(IFRAME_MENU).located(By.xpath("//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]/span[1]/span[2]"));
 		public static Target SELECT_FROMA_PAGO = Target.the("Select Forma de Pago").inIFrame(IFRAME_MENU).located(By.xpath("//li[contains(text(),'VENCIMIENTO')]"));
 		

@@ -4,7 +4,10 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import org.openqa.selenium.Keys;
 
+import com.cobiscorp.cobis.pfprt.test.Container;
 import com.cobiscorp.cobis.pfprt.test.FVistaOperacionForm.DetalleOperacion;
+import com.cobiscorp.cobis.testAutomationImpl.accionesApertura.Digitar;
+import com.cobiscorp.cobis.testAutomationImpl.constants.Parametros;
 
 import io.cucumber.java.Before;
 import net.serenitybdd.core.steps.Instrumented;
@@ -79,50 +82,6 @@ public class ContainerActionsTasks {
 		}
 
 	}
-	
-	public static class EnterDate implements Task {
-
-		private String text;
-		private Target target;
-
-		@Override
-		@Step("{0} digita #texto en la caja #inputBox")
-		public <T extends Actor> void performAs(T actor) {
-			actor.attemptsTo(Enter.theValue(text.substring(0, 2)).into(target).thenHit(Keys.ARROW_RIGHT)
-					.thenHit(getKey(text.substring(2,3))).thenHit(getKey(text.substring(3,4))).thenHit(Keys.ARROW_RIGHT)
-					.thenHit(getKey(text.substring(4, 5))).thenHit(getKey(text.substring(5,6)))
-					.thenHit(getKey(text.substring(6, 7))).thenHit(getKey(text.substring(7,8)))
-					.thenHit(Keys.TAB));
-		}
-
-		public EnterDate(Target target, String text) {
-			this.text = text;
-			this.target = target;
-		}
-
-		private static Keys getKey(String digit) {
-			Keys key=null;
-			switch(digit) {
-			case "0": key=Keys.NUMPAD0; break;
-			case "1": key=Keys.NUMPAD1; break;
-			case "2": key=Keys.NUMPAD2; break;
-			case "3": key=Keys.NUMPAD3; break;
-			case "4": key=Keys.NUMPAD4; break;
-			case "5": key=Keys.NUMPAD5; break;
-			case "6": key=Keys.NUMPAD6; break;
-			case "7": key=Keys.NUMPAD7; break;
-			case "8": key=Keys.NUMPAD8; break;
-			case "9": key=Keys.NUMPAD9; break;
-			}
-			return key;
-		}
-		public static Performable text(String text, Target target) {
-			return Instrumented.instanceOf(EnterDate.class).withProperties(target, text);
-		}
-
-	}
-
-	
 
 	public static class EnterTheText implements Task {
 
@@ -233,6 +192,7 @@ public class ContainerActionsTasks {
 
 		}
 	}
+
 	public static class ClicJS implements Task {
 
 		private Target elemento;
@@ -254,31 +214,5 @@ public class ContainerActionsTasks {
 		}
 
 	}
-	
-	
-	
-	public static class SelectWithModal implements Task {
-
-		private Target gridElement;
-		private Target button;
-		
-		@Override
-		public <T extends Actor> void performAs(T actor) {
-			actor.attemptsTo(Click.on(button),WaitUntil.angularRequestsHaveFinished(),Click.on(gridElement));
-		}
-
-		public SelectWithModal(Target button,Target gridElement) {
-			this.button = button;
-			this.gridElement=gridElement;
-		}
-
-		public static Performable select(Target button,Target gridElement) {
-
-			return Instrumented.instanceOf(SelectWithModal.class).withProperties(button,gridElement);
-
-		}
-
-	}
-	
 
 }
