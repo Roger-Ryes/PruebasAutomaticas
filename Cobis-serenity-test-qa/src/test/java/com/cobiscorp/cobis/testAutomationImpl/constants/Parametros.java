@@ -8,5 +8,6 @@ public class Parametros {
 	public static String FILIAL = "BANCO COBIS";
 	public static String OFICINA = "OFICINA MATRIZ";
 	public static String ROL = "MENU POR PROCESOS";
+	//public static String ROL = "ADMINISTRADOR DEPOSITOS A LA VISTA";
 
 }
