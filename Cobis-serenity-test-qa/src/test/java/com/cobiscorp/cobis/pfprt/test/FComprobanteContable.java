@@ -15,12 +15,14 @@ public class FComprobanteContable extends Base {
 	
 				
 	public static class Comprobante {
+		
 		public static Target INPUT_FECHA = Target.the("Fecha").inIFrame(FRAME).located(By.id("VA_1972NOYIHZCXWGH_841628"));
 		public static Target INPUT_DESCRIPCION = Target.the("Descripción").inIFrame(FRAME).located(By.id("VA_2045TVIPEQGWKDD_668628"));
 		public static Target FILTRO_COMPROBANTE_TIPO = Target.the("Comprobante Tipo").inIFrame(FRAME).located(By.xpath("//button[@ng-class='vc.viewState.VA_4483GJDPRVFSBRL_544628.style']"));
 		public static Target FILTRO_AREA_ORIGEN = Target.the("Area Origen").inIFrame(FRAME).located(By.xpath("//button[@ng-class='vc.viewState.VA_2502TECDGCHQJNR_958628.style']"));
-		
-		
+		public static Target FILTRO_OFICINA_ORIGEN = Target.the("Oficina Origen").inIFrame(FRAME).located(By.xpath("//button[@ng-class='vc.viewState.VA_4529KSKSKFDTQNZ_541628.style']"));
+		public static Target DESCRIPCION = Target.the("Descripcion").inIFrame(FRAME).located(By.id("VA_2045TVIPEQGWKDD_668628"));
+		public static Target MAYORIZADO = Target.the("Mayorizado").inIFrame(FRAME).located(By.id("VA_6243FNMPMOCLYMJ_803628"));
 	}
 
 	public static class GRID_TIPO_COMPROBANTE{
@@ -28,7 +30,9 @@ public class FComprobanteContable extends Base {
 	}
 	
 	public static class GRID_AREA_ORIGEN{
-		public static Target AREA_CONTABILIDAD = Target.the("Comprobante 1").inIFrame(FRAME).located(By.xpath("//span[contains(text(),'CONTABILIDAD')]"));
+		public static Target AREA_OPERACIONES = Target.the("Area Origen").inIFrame(FRAME).located(By.xpath("//span[contains(text(),'OPERACIONES')]"));
 	}
-	
+	public static class GRID_OFICINA_ORIGEN{
+		public static Target OFICINA_ORIGEN = Target.the("Oficina Origen").inIFrame(FRAME).located(By.xpath("//span[contains(text(),'1001 - SUCURSAL 1001')]"));
+	}
 }

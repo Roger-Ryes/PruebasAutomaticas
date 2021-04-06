@@ -13,14 +13,16 @@ public class ComprobanteContableStepDefinitions {
 		FormActions.selectMenuOption("Contabilidad>>Transacciones>>Comprobantes Contables");
 		FormActions.EnterDate(FComprobanteContable.Comprobante.INPUT_FECHA, "25122019");
 		
-		FormActions.clickOn(FComprobanteContable.Comprobante.FILTRO_COMPROBANTE_TIPO);	
-		FormActions.clickOn(FComprobanteContable.GRID_TIPO_COMPROBANTE.COMPROBANTE_1);	
+		FormActions.EnterText(FComprobanteContable.Comprobante.INPUT_DESCRIPCION, "Prueba");
+		
+		FormActions.clickOn(FComprobanteContable.Comprobante.FILTRO_OFICINA_ORIGEN);	
+		FormActions.clickOn(FComprobanteContable.GRID_OFICINA_ORIGEN.OFICINA_ORIGEN);	
 		
 		FormActions.clickOn(FComprobanteContable.Comprobante.FILTRO_AREA_ORIGEN);	
-		FormActions.clickOn(FComprobanteContable.GRID_AREA_ORIGEN.AREA_CONTABILIDAD);	
+		FormActions.clickOn(FComprobanteContable.GRID_AREA_ORIGEN.AREA_OPERACIONES);	
 		//FormActions.EnterText(FComprobanteContable.Comprobante.INPUT_DESCRIPCION, "Este es un comprobante");
 		
-		
+		FormActions.clickOn(FComprobanteContable.Comprobante.MAYORIZADO);	
 	}
 
 	@Cuando("realiza  el ingreso en la grilla, registro de Cuenta Débito por un  valor X")
