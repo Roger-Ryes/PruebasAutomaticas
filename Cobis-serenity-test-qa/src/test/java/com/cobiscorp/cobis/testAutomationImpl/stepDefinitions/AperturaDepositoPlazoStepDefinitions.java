@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 
 import com.cobiscorp.cobis.testAutomationImpl.accionesApertura.DiligenciarFormulario;
 import com.cobiscorp.cobis.testAutomationImpl.accionesGlobales.FormActions;
+import com.cobiscorp.cobis.testAutomationImpl.accionesGlobales.FormActionsTasks;
 import com.cobiscorp.cobis.pfprt.test.PaginaApertura;
 import com.cobiscorp.cobis.pfprt.test.DesignerHeader;
 import com.cobiscorp.cobis.pfprt.test.FBusquedaClientesForm;
@@ -14,8 +15,10 @@ import com.cobiscorp.cobis.pfprt.test.FVistaTitularesForm;
 import com.cobiscorp.cobis.pfprt.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.pfprt.test.FVistaOperacionForm;
 import com.cobiscorp.cobis.pfprt.test.FRecepcionModalForm.ListaDetalleRecepcion;
+import com.cobiscorp.cobis.pfprt.test.FVistaOperacionForm.DetalleOperacion;
 
 import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -35,7 +38,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 
 	@Cuando("realiza la busqueda de un {string}")
 	public void realiza_la_busqueda_de_un_cliente(String string) {
-		
+		//FormActionsTasks.Seleccionar.lista("PERSONA JURIDICA", FBusquedaClientesForm.DetalleOperacion.SELECT_CLIENTE);
 		FormActions.EnterText(FBusquedaClientesForm.FiltroBusquedaCliente.INPUT_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClientesForm.FiltroBusquedaCliente.BOTON_BUSCAR);
 		FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.PRIMER_CLIENTE);
@@ -70,5 +73,46 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(DesignerHeader.ACTIVAR);
 		FormActions.clickOn(DesignerHeader.BOTON_ACEPTAR_MODAL_ACTIVAR);
 	}
-
+	
+	
+	
+	
+	
+	
+	
+	//SEGUNDA HISTORIA
+//	@Dado("se navega  a la opción de menú Depósitos a Plazo_Apertura")
+//	public void se_navega_a_la_opción_de_menú_Depósitos_a_Plazo_Apertura() {
+//		FormActions.selectMenuOption("Depósitos a Plazo>>Apertura");
+//	}
+//
+//	@Cuando("realiza la busqueda de un {string}")
+//	public void realiza_la_busqueda_de_un(String string) {
+//		FormActions.clickOn(FVistaTitularesForm.GridListaTitulares.BOTON_NUEVO);
+//	    FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
+//		FormActions.EnterText( FBusquedaClientesForm.FiltroBusquedaCliente.INPUT_IDENTIFICACION , string );
+//		FormActions.clickOn( FBusquedaClientesForm.FiltroBusquedaCliente.BOTON_BUSCAR );
+//		FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.PRIMER_CLIENTE);
+//		FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.BOTON_ACCEPT_ROW);
+//		FormActions.clickOn(FVistaTitularesForm.BOTON_SIGUIENTE);
+//	}
+//	
+//	@Cuando("diligencia el formulario de Operación")
+//	public void diligencia_el_formulario_de_Operación() {
+//		theActorInTheSpotlight().attemptsTo(DiligenciarFormulario.crearApertura());
+//		FormActions.clickOn(FVistaOperacionForm.BOTON_ACEPTAR_MODAL);
+//		FormActions.clickOn(FVistaOperacionForm.BOTON_SIGUIENTE_OPERACION);
+//	}
+//	
+//	@Cuando("diligencia el formulario de recepción de fondos")
+//	public void diligencia_el_formulario_de_recepción_de_fondos() {
+//	    FormActions.clickOn(FVistaRecepcionForm.BOTON_NUEVO_RECEPFONDOS);
+//	    
+//	}
+//	
+//	@Entonces("crea el certificado de deposito en estado ing")
+//	public void crea_el_certificado_de_deposito_en_estado_ing() {
+//	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+//	}
 }

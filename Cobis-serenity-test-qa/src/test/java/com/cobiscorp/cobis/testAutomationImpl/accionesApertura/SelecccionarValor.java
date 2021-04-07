@@ -23,7 +23,7 @@ public class SelecccionarValor implements Task{
 	public <T extends Actor> void performAs(T actor) {
 		FormActionsTasks.WaitUntilComponent.charge();
 		actor.attemptsTo(FormActionsTasks.ClickOn.elementoWeb(listaSpan),
-				Click.on(By.xpath("//li[contains(text(),'"+listaSeleccion+"')]")));
+				Click.on(By.xpath("//li[text()='"+listaSeleccion+"']")));
 	}
 	
 	public SelecccionarValor(String listaSeleccion, Target listaSpan) {

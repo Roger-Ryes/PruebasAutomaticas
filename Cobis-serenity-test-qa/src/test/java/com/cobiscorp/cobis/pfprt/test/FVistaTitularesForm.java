@@ -78,6 +78,7 @@ public class FVistaTitularesForm extends Base {
 //
 	public static class GridListaTitulares {
 		public static Target BOTON_NUEVO = Target.the("Botón Nuevo").located(By.xpath("//button[@class='btn btn-default k-grid-add cb-grid-button ng-binding ng-scope']"));
+		public static Target SELECT_PERSONA_CLIC = Target.the("Select Persona Juridica").located(By.xpath("//body[1]/div[15]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/span[1]/span[2]"));
 	}
 }
 

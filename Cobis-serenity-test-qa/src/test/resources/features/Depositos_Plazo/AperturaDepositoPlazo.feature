@@ -14,9 +14,9 @@ Antecedentes: El usuario ingresa a cobis
   Esquema del escenario: El usuario crea una Apertura Deposito a Plazo
     Dado navega desde menu hacia Apertura
     Cuando abre la opcion cliente
-    Y realiza la busqueda de un "<cliente>"
+    Y realiza la busqueda de un <cliente>
     Y realiza el registro de un nuevo DPF para un cliente 
     Entonces se debe mostrar la creacion de la Apertura al cliente previamente seleccionado
    		Ejemplos:
-    | cliente      	 | 
-    | 123456789    | 
+    | cliente      | 
+    | "123456789"  |  

@@ -71,7 +71,7 @@ public class FormActionsTasks extends ContainerActionsTasks {
 			// TODO Auto-generated method stub
 			FormActionsTasks.WaitUntilComponent.charge();
 			actor.attemptsTo(ClickOn.elementoWeb(listaSpan),
-					Click.on(By.xpath("//li[contains(text(),'" + listaSeleccion + "')]")));
+					Click.on(By.xpath("//li[text()='" + listaSeleccion + "']")));
 		}
 
 		public Seleccionar(String listaSeleccion, Target listaSpan) {
